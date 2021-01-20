@@ -1,6 +1,6 @@
 Based on the architecture diagram, and the steps you have taken so far to upload data and access the application web service, identify at least 2 obvious poor practices as it relates to security.  Include justification.
 
 # Poor practice 1
-S3 objects are made publicly available. This is a wrong practice. Any one can access these buckets from Internet and access the recipes. 
+The IAM instance role policy attached to EC2 instances allow full access to all the S3 buckets. This is a poor practice. We should follow least privilge access best practice here and restrict the access to only the required bucket and control the operations that are allowed. 
 # Poor practice 2
 Web Service is installed in a public subnet with internet gateway enabled. Attacker can gain easy access to the web service instance. 
