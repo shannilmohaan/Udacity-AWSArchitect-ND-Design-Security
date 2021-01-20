@@ -1,0 +1,6 @@
+Research and analyze which of the vulnerabilities appear to be related to the code that was deployed for the environment in this project.
+The security group associated with the Web Application instance has all the ports opened for any one from internet. This can lead to attackers gaining easy access to the application instance.
+
+Bonus - provide recommendations on how to remediate the vulnerabilities.
+In the security group restrict the inbound access from the ELB application server and that too only on the http port 80 since this is a web server. 
+Remove the outbound rules allowing all traffic from any source to all the ports.

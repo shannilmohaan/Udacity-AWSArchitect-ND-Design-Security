@@ -1,0 +1,21 @@
+
+# What additional architectural change can be made to reduce the internet facing attack surface of the web application instance.
+1) Currently Load balancer is used to direct traffic to the web application instance. 
+2)To reduce the internet facing attack on the web application instance configure the web aplication instance in a private subnet with no internet access.
+3) Update the Security Group policy to allow incoming connection only from Load Balanacer IP address on Port 5000
+4) Disable access to all other ports.
+
+# Assuming the IAM permissions for the S3 bucket are still insecure, would creating VPC private endpoints for S3 prevent the unauthorized access to the secrets bucket.
+VPC Endpoints provide a secure connection to S3 that does not require a gateway or NAT instances.
+EC2 instances running in private subnets of a VPC can now have controlled access to S3 buckets, objects, and API functions that are in the same region as the VPC. 
+You can use an S3 bucket policy to indicate which VPCs and which VPC Endpoints have access to your S3 buckets.
+
+unless we configure the Web application EC2 instance in a private subnet and edit the S3 bucket policy with the VPC end point access, enabling VPC end points might not prevent unauthorized access completely.
+
+# Will applying default encryption setting to the s3 buckets encrypt the data that already exists?
+No. Enabling default encryption doesn't change the encryption of objects that are already in the bucket. The encryption applies only to future uploads.
+To change the encryption of an existing object to SSE-KMS, you must re-upload the object. Or, you can copy the object over itself. 
+
+# What would happen if the original cloud formation templates are applied to this environment.
+It will again create the stack with the original settings. the cloud formation template should be updated to reflect the changes. 
+

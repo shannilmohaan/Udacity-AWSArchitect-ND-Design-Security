@@ -1,0 +1,14 @@
+# Identify tools that will allow you to do the following:
+
+## Scan infrastructure as code templates
+CloudSpoilt ( Now Aqua Wave)
+### Example vulnerability
+This tool gives a resource wise breakdown of compliance and vulnerability checks. Few examples include Open SSH port on EC2 instance, S3 Bucket Encryption, IAM Minimum Password length.
+##Scan AMI’s or containers for OS vulnerabilities
+Anchore
+### Example vulnerability
+Software vulnerabilities in the container images
+##Scan an AWS environment for cloud configuration vulnerabilities
+AWS Config is a service that enables you to assess, audit, and evaluate the configurations of your AWS resources
+### Example vulnerability
+it provides you with a list of rules and resources that are non-compliant.
